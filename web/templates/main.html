@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 페이지</title>
+    <link rel="stylesheet" href={{url_for('static',filename='css/main.css')}}>
+</head>
+<body>
+    <div class="top">
+        <div class="top_menu">
+            <a>{{ user_nickname }}</a>
+            <a href="{{ url_for('view.mypage') }}">MyPage</a>
+            <a href="{{ url_for('auth.logout') }}">Logout</a>
+        </div>
+    </div>
+    
+    <section>
+        <form action="/main" method="POST" id="searchForm"  onsubmit="return checkInput();">
+            <div class="main">
+                <img src="./static/logo.png" alt="logo">
+                <div class="searchBox">
+                    <input type="text" name="trans_text" id="trans_text" class="query" value="" >
+                    <button type="submit" class="icons">
+                    <img src="./static/search.png" alt="search">
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>

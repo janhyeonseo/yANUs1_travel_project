@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{url_for('static',filename='css/mypage.css')}}>
+    <title>Document</title>
+</head>
+<body>
+        <div class="image-container">
+            <a href="{{ url_for('view.main') }}">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="logo">
+            </a>
+        </div>
+        <div class="top_menu">
+            <a >{{ user_nickname }}</a>
+            <a href="{{ url_for('auth.logout') }}">Logout</a>
+        </div>
+        <div class="my-container">
+            <h3 class="link-info">Edit Info</h3>  
+            <h1 class="link-my"><b>My page</b></h1>        
+            <h3 class="link-search">Search History</h3>
+         </div>
+
+         <div class="page1" id="pageContent-my">
+                <div class="gaib_nick">
+                    <h5>닉네임</h5>
+                    <p>{{ user_nickname }}</p> <!-- 사용자 닉네임 출력 -->
+                </div>
+                <div class="gaib_id">
+                    <h5>아이디</h5>
+                    <p>{{ user_id }}</p> <!-- 사용자 아이디 출력 -->
+                </div>
+                <div class="email">
+                    <h5>이메일</h5>
+                    <p>{{ user_email }}</p> <!-- 사용자 이메일 출력 -->
+                </div>
+                <div class="phone">
+                    <h5>전화번호</h5>
+                    <p>{{ user_phone }}</p> <!-- 사용자 전화번호 출력 -->
+                </div>
+
+         </div>
+         <div class="separator"></div>
+         <form action="{{ url_for('view.mypage') }}" method="post">
+            <div class="page" id="pageContent-info">
+                <div class="gaib_nick">
+                    <h5>닉네임</h5>
+                    <input type="text" name="gaib_nick" id="gaib_nick"  maxlength="20" placeholder="닉네임을 입력하세요">
+                </div>
+                <div class="now_pw">
+                    <h5>현재 비밀번호</h5>
+                    <input type="password" name="now_pw" id="now_pw"  maxlength="20" placeholder="현재 비밀번호를 입력하세요">
+                </div>
+                <div class="gaib_pw">
+                    <h5>새로운 비밀번호</h5>
+                    <input type="password" name="gaib_pw" id="gaib_pw"  maxlength="20" placeholder="새로운 비밀번호를 입력하세요">
+                </div>
+                <div class="gaib_pw1">
+                    <h5>비밀번호 재확인</h5>
+                    <input type="password" name="gaib_pw1" id="gaib_pw1" maxlength="20" placeholder="비밀번호를 재입력하세요">
+                </div>
+
+                <div class="email">
+                    <h5>이메일</h5>
+                    <input type="text" name="email" id="email" maxlength="20" class="check" placeholder="이메일을 입력하세요">   
+                </div>
+
+                <div class="phone">
+                    <h5>전화번호</h5>
+                    <input type="text" name="phone" id="phone" class="check" placeholder="-를 제외하고 입력하세요">
+                </div>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class="flash-messages">
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+                <div class="membergaib">
+                    <button type="submit" onclick="joinform_check();">수정하기</button>
+                </div>
+            </div>
+        </form>
+        <div class="page" id="pageContent-search">
+            <ul class="search-history-list">
+                {% for history in search_history %}
+                    <li class="history-item">
+                        <a class="history-link" href="{{ url_for('view.view_history_detail', timestamp=history.timestamp) }}">
+                            <span class="history-index">{{ loop.index }}.</span>
+                            <span class="history-text">{{ history.search_text }}</span>
+                            <span class="history-timestamp">{{ history.timestamp|datetime }}</span>
+                            <button class="history-delete-btn" data-record-id="{{ history.id }}">삭제</button>
+                        </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <script src="{{ url_for('static', filename='js/mypage.js') }}"></script>
+</body>
+</html>
