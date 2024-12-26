@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# yANUs1_travel_project
+## yANUs1_travel_project
 
 yANUS 동아리 1팀 프로젝트 입니다.
 인공지능 stable-diffusion 및 cnn 모델을 활용하여 사용자에게 입력받은 추상적인 관광지 정보를 바탕으로 관광지를 추천합니다.
