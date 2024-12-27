@@ -21,19 +21,58 @@
           </div>
    </div>
 
-### 📝 상세역할
+## 📝 주요 기능
+<details>
+<summary>시스템 흐름도</summary>
+    
+![image](https://github.com/user-attachments/assets/4388a7f2-5c6f-426d-9318-ad58d9e1124a)
+![image](https://github.com/user-attachments/assets/f104b3c3-a10d-4622-9fd4-b2c07a77fc96)
+</details>
+
+<details>
+<summary>데이터 전처리</summary>
+
+![image](https://github.com/user-attachments/assets/f97451a2-222d-4f23-9e3a-29e04bcda4c2)
+</details>
+
+<details>
+<summary>GAN 모델</summary>
+
+![image](https://github.com/user-attachments/assets/ab12fa48-4c74-4c75-a03c-49e939ed8b13)
+![image](https://github.com/user-attachments/assets/acb1c20f-b7f2-4250-a78d-798d7398a9d5)
+</details>
+
+<details>
+<summary>CNN 모델</summary>
+    
+![image](https://github.com/user-attachments/assets/aed65320-92c0-40da-bf07-436cb2085605)
+![image](https://github.com/user-attachments/assets/d09f8508-ceea-4568-9699-3f3322efc8f5)
+![image](https://github.com/user-attachments/assets/808a1fea-0f39-4ceb-a12e-50a45efd7597)
+![image](https://github.com/user-attachments/assets/a43a5ce4-b8c1-4307-9834-4147c38017c0)
+![image](https://github.com/user-attachments/assets/e41704df-7f29-4221-9d39-2b774da1802d)
+</details>
+
+<details>
+<summary>이미지 생성 결과</summary>
+    
+![image](https://github.com/user-attachments/assets/38144301-fa4e-4c0a-a12e-df48403e17b9)
+</details>
+
+
+
+### 👤 상세역할
 - #### 개발(이미지 및 정보 크롤링, CNN 모델 훈련과 전처리)
 - Selenium과 BeautifulSoup를 활용해 관광지 정보를 크롤링.
 - 문헌 정보는 HTML 구조를 분석 후 XPath를 통해 정확히 추출.
 - Chrome Driver를 사용하여 6,421개의 이미지 스크래핑 및 저장.
 - 수집된 이미지를  전처리 작업 후 CNN 모델 학습.
 
-### 📝 성과 및 기여
+### 🎯 성과 및 기여
 - 정확도 향상: 초기 CNN 모델의 정확도 72%에서 하이퍼파라미터 튜닝 및 데이터 전처리를 통해 89%까지 개선.
 - 협업 성과: 팀원들과 역할을 분담하여 데이터 수집, 모델 학습, 결과 통합 등 프로젝트의 모든 단계를 성공적으로 완수.
 - 정보처리기술학회 금상 수상
 
-### 논문: https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11652126
+### 🏆 논문: https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11652126
    
 ```
 yANUs1-travel-project_main
