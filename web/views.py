@@ -1,3 +1,8 @@
+import sys
+import os
+# 현재 프로젝트 디렉터리를 Python 모듈 검색 경로에 추가
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from flask import Blueprint, session, jsonify, send_from_directory
 from flask import render_template
 from flask_login import login_required, current_user
@@ -9,7 +14,6 @@ from . import db
 from werkzeug.security import check_password_hash, generate_password_hash
 from werkzeug.utils import secure_filename
 from .models import User, SearchHistory
-import os
 
 translate_json_path = 'abstract-plane-396801-904742608cb2.json'
 
