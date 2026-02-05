@@ -21,8 +21,8 @@
           </div>
    </div>
 
-## 📝 주요 기능
-<details>
+## 📝 주요 기능 
+<details> 
 <summary>시스템 흐름도</summary>
     
 ![image](https://github.com/user-attachments/assets/4388a7f2-5c6f-426d-9318-ad58d9e1124a)
